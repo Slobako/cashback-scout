@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: Constants.loginToMapSegue, sender: nil)
                 }
+            } else {
+                print("error logging in")
             }
         }
     }

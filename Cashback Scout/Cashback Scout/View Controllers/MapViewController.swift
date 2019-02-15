@@ -27,7 +27,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         
-        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        
+    }
 
     // MARK: - CLLocationManager Delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -39,6 +45,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             let userIndicator = MKPointAnnotation()
             userIndicator.coordinate = currentLocation.coordinate
             mapView.addAnnotation(userIndicator)
+            APIManager.shared.fetchVenuesIn(city: "New York") { (flag) in
+                if flag {
+                    print("Venues fetched") // set annotations for all of them too
+                } else {
+                    print("Error fetching venues")
+                }
+            }
         }
     }
 }

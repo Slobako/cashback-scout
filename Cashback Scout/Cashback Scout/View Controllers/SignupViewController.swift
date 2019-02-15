@@ -26,6 +26,8 @@ class SignupViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: Constants.signupToMapSegue, sender: nil)
                 }
+            } else {
+                print("error signing up")
             }
         }
     }

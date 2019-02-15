@@ -69,9 +69,7 @@
 				4580EC7F2213E86E003114B6 /* AppDelegate.swift */,
 				4580EC9D2216E541003114B6 /* Utils */,
 				4580EC99221660D3003114B6 /* Services */,
-				4580EC9122142841003114B6 /* LoginViewController.swift */,
-				4580EC9722165A68003114B6 /* SignupViewController.swift */,
-				4580EC9B2216664E003114B6 /* MapViewController.swift */,
+				4580ECA222170060003114B6 /* View Controllers */,
 				4580EC9A221660F7003114B6 /* Storyboards */,
 				4580EC862213E878003114B6 /* Assets.xcassets */,
 				4580EC8B2213E878003114B6 /* Info.plist */,
@@ -104,6 +102,16 @@
 				4580EC9E2216E56B003114B6 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4580ECA222170060003114B6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4580EC9122142841003114B6 /* LoginViewController.swift */,
+				4580EC9722165A68003114B6 /* SignupViewController.swift */,
+				4580EC9B2216664E003114B6 /* MapViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

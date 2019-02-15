@@ -13,7 +13,7 @@ struct APIManager {
     static let shared = APIManager()
     let baseUrlString = "https://cashback-explorer-api.herokuapp.com/"
     
-    
+    // creates new user
     func createNewUserWith(name: String, email: String, completion: @escaping (Bool) -> Void) {
         let urlString = baseUrlString + "users"
         guard let url = URL(string: urlString) else { return }
@@ -40,6 +40,7 @@ struct APIManager {
         }
     }
     
+    // signs in user
     func loginUserWith(name: String, email: String, completion: @escaping (Bool) -> Void) {
         let urlString = baseUrlString + "login"
         guard let url = URL(string: urlString) else { return }
@@ -70,5 +71,37 @@ struct APIManager {
             task.resume()
         } catch {
         }
+    }
+    
+    // fetches all venues in a given city
+    func fetchVenuesIn(city: String, completion: @escaping (Bool) -> Void) {
+        let urlString = baseUrlString + "venues"
+        var components = URLComponents(string: urlString)
+        components?.queryItems = [URLQueryItem(name: "city", value: "\(city)")]
+        guard let url = components?.url else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        if let token = KeychainService.loadToken() {
+            request.addValue(token, forHTTPHeaderField: "Token")
+        } else {
+            print("Error: Token missing")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if response != nil {
+                guard let data = data else { return }
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data) as? [String: AnyObject] {
+                        print("json: \(json)")
+                    }
+                } catch {
+                    
+                }
+            } else {
+                print("response returned is nil")
+            }
+        }
+        task.resume()
     }
 }
