@@ -9,15 +9,31 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
+    
+    // MARK: - Properties
+    var locationManager = CLLocationManager()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
     }
 
+    // MARK: - CLLocationManager Delegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager = manager
+        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse) ||
+            (CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            guard let currentLocation = locations.last else { return }
+            MapManager.shared.centerMap(mapView: mapView, on: currentLocation)
+        }
+    }
 }

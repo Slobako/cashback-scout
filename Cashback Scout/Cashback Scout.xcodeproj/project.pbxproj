@@ -17,6 +17,7 @@
 		4580EC9822165A68003114B6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9722165A68003114B6 /* SignupViewController.swift */; };
 		4580EC9C2216664E003114B6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9B2216664E003114B6 /* MapViewController.swift */; };
 		4580EC9F2216E56B003114B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9E2216E56B003114B6 /* Constants.swift */; };
+		4580ECA12216E8C8003114B6 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580ECA02216E8C8003114B6 /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4580EC9722165A68003114B6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		4580EC9B2216664E003114B6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4580EC9E2216E56B003114B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4580ECA02216E8C8003114B6 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				4580EC9322156910003114B6 /* APIManager.swift */,
 				4580EC9522158217003114B6 /* KeychainService.swift */,
+				4580ECA02216E8C8003114B6 /* MapManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				4580EC9C2216664E003114B6 /* MapViewController.swift in Sources */,
 				4580EC9422156910003114B6 /* APIManager.swift in Sources */,
 				4580EC9222142841003114B6 /* LoginViewController.swift in Sources */,
+				4580ECA12216E8C8003114B6 /* MapManager.swift in Sources */,
 				4580EC9F2216E56B003114B6 /* Constants.swift in Sources */,
 				4580EC9622158217003114B6 /* KeychainService.swift in Sources */,
 				4580EC802213E86E003114B6 /* AppDelegate.swift in Sources */,
