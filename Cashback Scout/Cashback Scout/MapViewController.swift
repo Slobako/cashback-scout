@@ -16,6 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Properties
     var locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,7 +26,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
-    }
+        
+        }
 
     // MARK: - CLLocationManager Delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -34,6 +36,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             (CLLocationManager.authorizationStatus() == .authorizedAlways) {
             guard let currentLocation = locations.last else { return }
             MapManager.shared.centerMap(mapView: mapView, on: currentLocation)
+            let userIndicator = MKPointAnnotation()
+            userIndicator.coordinate = currentLocation.coordinate
+            mapView.addAnnotation(userIndicator)
         }
     }
 }
