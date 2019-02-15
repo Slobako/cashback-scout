@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4580EC802213E86E003114B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC7F2213E86E003114B6 /* AppDelegate.swift */; };
-		4580EC822213E86E003114B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC812213E86E003114B6 /* ViewController.swift */; };
 		4580EC852213E86E003114B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4580EC832213E86E003114B6 /* Main.storyboard */; };
 		4580EC872213E878003114B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4580EC862213E878003114B6 /* Assets.xcassets */; };
 		4580EC8A2213E878003114B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4580EC882213E878003114B6 /* LaunchScreen.storyboard */; };
@@ -16,12 +15,13 @@
 		4580EC9422156910003114B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9322156910003114B6 /* APIManager.swift */; };
 		4580EC9622158217003114B6 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9522158217003114B6 /* KeychainService.swift */; };
 		4580EC9822165A68003114B6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9722165A68003114B6 /* SignupViewController.swift */; };
+		4580EC9C2216664E003114B6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9B2216664E003114B6 /* MapViewController.swift */; };
+		4580EC9F2216E56B003114B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9E2216E56B003114B6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4580EC7C2213E86E003114B6 /* Cashback Scout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cashback Scout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4580EC7F2213E86E003114B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4580EC812213E86E003114B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4580EC842213E86E003114B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4580EC862213E878003114B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4580EC892213E878003114B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		4580EC9322156910003114B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		4580EC9522158217003114B6 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		4580EC9722165A68003114B6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		4580EC9B2216664E003114B6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4580EC9E2216E56B003114B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +65,42 @@
 			isa = PBXGroup;
 			children = (
 				4580EC7F2213E86E003114B6 /* AppDelegate.swift */,
-				4580EC812213E86E003114B6 /* ViewController.swift */,
+				4580EC9D2216E541003114B6 /* Utils */,
+				4580EC99221660D3003114B6 /* Services */,
 				4580EC9122142841003114B6 /* LoginViewController.swift */,
 				4580EC9722165A68003114B6 /* SignupViewController.swift */,
-				4580EC9322156910003114B6 /* APIManager.swift */,
-				4580EC9522158217003114B6 /* KeychainService.swift */,
-				4580EC832213E86E003114B6 /* Main.storyboard */,
+				4580EC9B2216664E003114B6 /* MapViewController.swift */,
+				4580EC9A221660F7003114B6 /* Storyboards */,
 				4580EC862213E878003114B6 /* Assets.xcassets */,
-				4580EC882213E878003114B6 /* LaunchScreen.storyboard */,
 				4580EC8B2213E878003114B6 /* Info.plist */,
 			);
 			path = "Cashback Scout";
+			sourceTree = "<group>";
+		};
+		4580EC99221660D3003114B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4580EC9322156910003114B6 /* APIManager.swift */,
+				4580EC9522158217003114B6 /* KeychainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4580EC9A221660F7003114B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4580EC882213E878003114B6 /* LaunchScreen.storyboard */,
+				4580EC832213E86E003114B6 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4580EC9D2216E541003114B6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4580EC9E2216E56B003114B6 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4580EC9822165A68003114B6 /* SignupViewController.swift in Sources */,
+				4580EC9C2216664E003114B6 /* MapViewController.swift in Sources */,
 				4580EC9422156910003114B6 /* APIManager.swift in Sources */,
 				4580EC9222142841003114B6 /* LoginViewController.swift in Sources */,
-				4580EC822213E86E003114B6 /* ViewController.swift in Sources */,
+				4580EC9F2216E56B003114B6 /* Constants.swift in Sources */,
 				4580EC9622158217003114B6 /* KeychainService.swift in Sources */,
 				4580EC802213E86E003114B6 /* AppDelegate.swift in Sources */,
 			);
