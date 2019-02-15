@@ -14,6 +14,8 @@
 		4580EC8A2213E878003114B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4580EC882213E878003114B6 /* LaunchScreen.storyboard */; };
 		4580EC9222142841003114B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9122142841003114B6 /* LoginViewController.swift */; };
 		4580EC9422156910003114B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9322156910003114B6 /* APIManager.swift */; };
+		4580EC9622158217003114B6 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9522158217003114B6 /* KeychainService.swift */; };
+		4580EC9822165A68003114B6 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4580EC9722165A68003114B6 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4580EC8B2213E878003114B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4580EC9122142841003114B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4580EC9322156910003114B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4580EC9522158217003114B6 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		4580EC9722165A68003114B6 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				4580EC7F2213E86E003114B6 /* AppDelegate.swift */,
 				4580EC812213E86E003114B6 /* ViewController.swift */,
 				4580EC9122142841003114B6 /* LoginViewController.swift */,
+				4580EC9722165A68003114B6 /* SignupViewController.swift */,
 				4580EC9322156910003114B6 /* APIManager.swift */,
+				4580EC9522158217003114B6 /* KeychainService.swift */,
 				4580EC832213E86E003114B6 /* Main.storyboard */,
 				4580EC862213E878003114B6 /* Assets.xcassets */,
 				4580EC882213E878003114B6 /* LaunchScreen.storyboard */,
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4580EC9822165A68003114B6 /* SignupViewController.swift in Sources */,
 				4580EC9422156910003114B6 /* APIManager.swift in Sources */,
 				4580EC9222142841003114B6 /* LoginViewController.swift in Sources */,
 				4580EC822213E86E003114B6 /* ViewController.swift in Sources */,
+				4580EC9622158217003114B6 /* KeychainService.swift in Sources */,
 				4580EC802213E86E003114B6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

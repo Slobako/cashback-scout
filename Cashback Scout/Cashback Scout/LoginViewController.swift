@@ -21,10 +21,10 @@ class LoginViewController: UIViewController {
     }
     
 
-    @IBAction func signInTapped(_ sender: Any) {
-        APIManager.shared.createNewUserWith(name: nameTextField.text!, email: emailTextField.text!) { (flag) in
+    @IBAction func signInTapped(_ sender: Any) {        
+        APIManager.shared.loginUserWith(name: nameTextField.text!, email: emailTextField.text!) { (flag) in
             if flag {
-                print("successfull signup")
+                print("successfull login")
             }
         }
     }
