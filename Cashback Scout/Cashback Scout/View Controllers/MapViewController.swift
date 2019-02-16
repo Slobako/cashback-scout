@@ -69,4 +69,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }
+
 }

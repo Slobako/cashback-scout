@@ -26,7 +26,7 @@ class VenueAnnotation: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return cashback
+        return "\(cashback)%"
     }
     
     var title: String? {

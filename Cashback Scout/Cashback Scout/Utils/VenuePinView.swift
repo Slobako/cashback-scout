@@ -12,14 +12,12 @@ import MapKit
 class VenuePinView: MKMarkerAnnotationView {
     override var annotation: MKAnnotation? {
         willSet {
-            // 1
             guard let venuePin = newValue as? VenueAnnotation else { return }
             canShowCallout = true
-            calloutOffset = CGPoint(x: -5, y: 5)
+            calloutOffset = CGPoint(x: -10, y: 10)
             rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            // 2
             markerTintColor = .blue
-            glyphText =  venuePin.cashback // String(venuePin.cashback)
+            glyphText = "\(venuePin.cashback)%"
         }
     }
 }
