@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - IBActions
     @IBAction func signInTapped(_ sender: Any) {        
         APIManager.shared.loginUserWith(name: nameTextField.text!, email: emailTextField.text!) { (flag) in
             if flag {

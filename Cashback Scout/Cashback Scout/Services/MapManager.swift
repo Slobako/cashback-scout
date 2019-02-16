@@ -13,7 +13,7 @@ struct MapManager {
     
     static let shared = MapManager()
     
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 20000 // in meters
     
     func centerMap(mapView: MKMapView, on location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,

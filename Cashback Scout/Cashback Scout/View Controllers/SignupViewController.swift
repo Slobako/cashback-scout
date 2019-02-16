@@ -19,6 +19,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // MARK: - IBActions
     @IBAction func signupTapped(_ sender: Any) {
         APIManager.shared.createNewUserWith(name: nameTextField.text!, email: emailTextField.text!) { (flag) in
             if flag {

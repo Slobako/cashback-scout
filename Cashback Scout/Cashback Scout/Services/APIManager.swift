@@ -74,7 +74,7 @@ struct APIManager {
     }
     
     // fetches all venues in a given city
-    func fetchVenuesIn(city: String, completion: @escaping (Bool) -> Void) {
+    func fetchVenuesIn(city: String, completion: @escaping (Bool, [Venue]) -> Void) {
         let urlString = baseUrlString + "venues"
         var components = URLComponents(string: urlString)
         components?.queryItems = [URLQueryItem(name: "city", value: "\(city)")]
@@ -92,8 +92,17 @@ struct APIManager {
             if response != nil {
                 guard let data = data else { return }
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data) as? [String: AnyObject] {
-                        print("json: \(json)")
+                    if let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: AnyObject] {
+                        print("json: \(jsonObject)")
+                        guard let jsonArrayOfVenues = jsonObject["venues"] as? [[String: AnyObject]] else { return }
+                        var arrayOfVenues: [Venue] = []
+                        for dict in jsonArrayOfVenues {
+                            if let singleVenue = Venue(json: dict) {
+                                arrayOfVenues.append(singleVenue)
+                            }
+                        }
+                        print("Array of Venues: \(arrayOfVenues)")
+                        completion(true, arrayOfVenues)
                     }
                 } catch {
                     

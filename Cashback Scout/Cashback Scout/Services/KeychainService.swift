@@ -11,8 +11,6 @@ import Security
 
 // Constant Identifiers
 let userAccount = "AuthenticatedUser"
-let accessGroup = "SecuritySerivice"
-
 let tokenKey = "TokenKey"
 
 // Arguments for the keychain queries
@@ -27,10 +25,7 @@ let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne)
 
 public class KeychainService: NSObject {
     
-    /**
-     * Exposed methods to perform save and load queries.
-     */
-    
+    // MARK: - public functions to perform save and oad queries
     public class func saveToken(token: String) {
         self.save(service: tokenKey, data: token)
     }
@@ -39,10 +34,7 @@ public class KeychainService: NSObject {
         return self.load(service: tokenKey)
     }
     
-    /**
-     * Internal methods for querying the keychain.
-     */
-    
+    // MARK: - private functions for querying the keychain
     private class func save(service: String, data: String) {
         let dataFromString: Data = data.data(using: String.Encoding.utf8, allowLossyConversion: false)!
         

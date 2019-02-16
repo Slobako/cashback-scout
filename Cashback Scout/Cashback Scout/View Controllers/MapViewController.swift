@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     // MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -27,12 +27,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-        
+        mapView.register(VenuePinView.self,
+                         forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
 
     // MARK: - CLLocationManager Delegate
@@ -45,13 +41,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             let userIndicator = MKPointAnnotation()
             userIndicator.coordinate = currentLocation.coordinate
             mapView.addAnnotation(userIndicator)
-            APIManager.shared.fetchVenuesIn(city: "New York") { (flag) in
+            APIManager.shared.fetchVenuesIn(city: "New York") { (flag, arrayOfVenues) in
                 if flag {
                     print("Venues fetched") // set annotations for all of them too
+                    DispatchQueue.main.async {
+                        for venue in arrayOfVenues {
+                            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(venue.lat),
+                                                                    longitude: CLLocationDegrees(venue.long))
+                            let venueIndicator = VenueAnnotation(cashback: String(describing: venue.cashback),
+                                                                                  name: venue.name,
+                                                                                  city: venue.city,
+                                                                                  coordinate: coordinate)
+                            self.mapView.addAnnotation(venueIndicator)
+                        }
+                    }
                 } else {
                     print("Error fetching venues")
                 }
             }
         }
+    }
+
+    // MARK: - MKMapView Delegate
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! VenueAnnotation
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        location.mapItem().openInMaps(launchOptions: launchOptions)
     }
 }
