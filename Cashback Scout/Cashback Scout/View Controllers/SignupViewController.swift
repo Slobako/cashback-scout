@@ -23,12 +23,17 @@ class SignupViewController: UIViewController {
     @IBAction func signupTapped(_ sender: Any) {
         APIManager.shared.createNewUserWith(name: nameTextField.text!, email: emailTextField.text!) { (flag) in
             if flag {
-                print("successfull signup")
+                print("successful signup")
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: Constants.signupToMapSegue, sender: nil)
                 }
             } else {
                 print("error signing up")
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "Error signing up.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }

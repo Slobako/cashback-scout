@@ -31,6 +31,11 @@ class LoginViewController: UIViewController {
                 }
             } else {
                 print("error logging in")
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "Error logging in.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }

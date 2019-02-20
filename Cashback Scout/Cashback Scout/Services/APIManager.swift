@@ -32,11 +32,17 @@ struct APIManager {
                         print("Token: \(String(describing: token))")
                         KeychainService.saveToken(token: token)
                         completion(true)
+                    } else {
+                        completion(false)
                     }
+                } else {
+                    completion(false)
                 }
             }
             task.resume()
-        } catch {
+        } catch let error {
+            print("Error: \(error.localizedDescription)")
+            completion(false)
         }
     }
     
@@ -57,6 +63,7 @@ struct APIManager {
                 request.addValue(token, forHTTPHeaderField: "Token")
             } else {
                 print("Error: Token missing")
+                completion(false)
                 return
             }
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -65,11 +72,17 @@ struct APIManager {
                         print("Token: \(String(describing: token))")
                         KeychainService.saveToken(token: token)
                         completion(true)
+                    } else {
+                        completion(false)
                     }
+                } else {
+                    completion(false)
                 }
             }
             task.resume()
-        } catch {
+        } catch let error {
+            print("Error: \(error.localizedDescription)")
+            completion(false)
         }
     }
     
@@ -85,6 +98,7 @@ struct APIManager {
             request.addValue(token, forHTTPHeaderField: "Token")
         } else {
             print("Error: Token missing")
+            completion(false, [])
             return
         }
         
@@ -103,12 +117,15 @@ struct APIManager {
                         }
                         print("Array of Venues: \(arrayOfVenues)")
                         completion(true, arrayOfVenues)
+                    } else {
+                        completion(false, [])
                     }
-                } catch {
-                    
+                } catch let error {
+                    print("Error: \(error.localizedDescription)")
                 }
             } else {
                 print("response returned is nil")
+                completion(false, [])
             }
         }
         task.resume()

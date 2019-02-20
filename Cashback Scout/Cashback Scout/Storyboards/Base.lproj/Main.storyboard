@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSY-fu-spz">
-                                <rect key="frame" x="0.0" y="426" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="396" width="375" height="30"/>
                                 <state key="normal" title="Not registerred yet? Sign up here!"/>
                                 <connections>
                                     <segue destination="Voe-aV-8nr" kind="presentation" modalTransitionStyle="flipHorizontal" id="QBg-aT-sgw"/>
@@ -85,7 +85,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eb5-Ud-fTO" secondAttribute="trailing" constant="20" id="RZd-Op-80l"/>
                             <constraint firstItem="Eb5-Ud-fTO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Sxu-Tn-Kd3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NKC-Fl-6Je" secondAttribute="trailing" constant="20" id="e1o-bb-11J"/>
-                            <constraint firstItem="uSY-fu-spz" firstAttribute="top" secondItem="vYm-MD-gh8" secondAttribute="bottom" constant="60" id="hLy-KD-O17"/>
+                            <constraint firstItem="uSY-fu-spz" firstAttribute="top" secondItem="vYm-MD-gh8" secondAttribute="bottom" constant="30" id="hLy-KD-O17"/>
                             <constraint firstItem="NKC-Fl-6Je" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iKB-Gm-XTg"/>
                             <constraint firstItem="uSY-fu-spz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="keP-z4-CBe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IQ7-pE-qW1" secondAttribute="trailing" constant="20" id="mB1-gF-Db0"/>
@@ -180,7 +180,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfC-Ip-jcU">
-                                <rect key="frame" x="0.0" y="426" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="396" width="375" height="30"/>
                                 <state key="normal" title="Already registered? Sign in here!"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="IOv-51-JYj"/>
@@ -202,7 +202,7 @@
                             <constraint firstItem="Q5g-uK-mbC" firstAttribute="top" secondItem="LFA-Tk-ASd" secondAttribute="bottom" constant="30" id="2Ly-mg-foT"/>
                             <constraint firstItem="IKK-xp-8FL" firstAttribute="top" secondItem="Q5g-uK-mbC" secondAttribute="bottom" constant="30" id="2rn-cd-yLz"/>
                             <constraint firstItem="y2W-fy-J3w" firstAttribute="trailing" secondItem="Q5g-uK-mbC" secondAttribute="trailing" constant="20" id="4Uy-hx-xTj"/>
-                            <constraint firstItem="pfC-Ip-jcU" firstAttribute="top" secondItem="IKK-xp-8FL" secondAttribute="bottom" constant="60" id="Ciq-zE-YqA"/>
+                            <constraint firstItem="pfC-Ip-jcU" firstAttribute="top" secondItem="IKK-xp-8FL" secondAttribute="bottom" constant="30" id="Ciq-zE-YqA"/>
                             <constraint firstItem="gQJ-Gl-0jz" firstAttribute="leading" secondItem="LFA-Tk-ASd" secondAttribute="leading" id="D6L-4Z-GsD"/>
                             <constraint firstItem="LFA-Tk-ASd" firstAttribute="top" secondItem="gQJ-Gl-0jz" secondAttribute="bottom" constant="28.5" id="HnE-o2-4YS"/>
                             <constraint firstItem="y2W-fy-J3w" firstAttribute="trailing" secondItem="pfC-Ip-jcU" secondAttribute="trailing" id="M6s-U0-t8p"/>
